@@ -1,0 +1,16 @@
+
+class apache2( 
+    $user = apache2::params::user,  
+    $group = apache2::params::group,
+    #$mode = apache2::params::mode, 
+ )  inherits apache2::params {
+
+
+    class {'apache2::users':}
+    class {'apache2::groups':}  
+    class {'apache2::install':} 
+    class {'apache2::config':}
+    class {'apache2::service':}
+   
+              
+}              
